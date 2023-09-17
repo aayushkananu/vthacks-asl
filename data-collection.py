@@ -11,7 +11,7 @@ offset = 20
 imgSize = 300
 
 
-folder = "data/B"
+folder = "data/C"
 counter = 0
 
 while True:
