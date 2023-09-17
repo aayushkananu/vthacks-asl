@@ -9,9 +9,10 @@ detector = HandDetector(maxHands=1)
 
 offset = 20
 imgSize = 300
-counter = 0
+
 
 folder = "data/A"
+counter = 0
 
 while True:
     success, img = cap.read()
@@ -47,12 +48,18 @@ while True:
         cv2.imshow("ImageCrop", imgCrop)
         cv2.imshow("ImageWhite", imgWhite)
 
-
-    cv2.imshow("Image ", img)
+    cv2.imshow("Image", img)
     key = cv2.waitKey(1)
     if key == ord("s"):
-        counter += 1 
-        cv2.imwrite(f'{folder}/Image_{time.time}.jpg', imgWhite)
+        counter += 1
+        cv2.imwrite(f'{folder}/Image_{time.time()}.jpg',imgWhite)
+        print(counter)
+    
+    cv2.imshow("Image", img)
+    key = cv2.waitKey(1)
+    if key == ord("s"):
+        counter += 1
+        cv2.imwrite(f'{folder}/Image_{time.time()}.jpg',imgWhite)
         print(counter)
 
 
